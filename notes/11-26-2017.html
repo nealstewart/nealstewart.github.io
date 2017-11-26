@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"></meta>
+	<link rel="stylesheet" type="text/css" href="../index.css" />
+</head>
+<body>
+    <h1>11 - 26 - 2017</h1>
+    <h2>Statecharts</h2>
+    <p>
+        I found an interesting paper today. I've included it in <a href="./supportingdocuments/Statecharts.pdf">my documents</a>.
+    </p>
+    <p>
+        The document is from some time ago, and it attempts to break down the functionality
+        of a watch using state diagrams and transitions. The notation is interesting. He speaks
+        of encapsulating states a set of states. A so-called superstate.
+    </p>
+
+    <p>
+        He defines the superstate with this term:
+    </p>
+
+    <blockquote>
+        We say that Y is the <em>orthogonal product</em> of <em>A</em> and <em>D</em>
+    </blockquote>
+
+    <p>
+        Orthogonality in computer science has been used to describe
+        a property of states. In this terminology, I'm not certain whether it is the
+        states <em>and</em> their transitions, or exclusively the states that are being
+        included in the term product.
+    </p>
+
+    <p>
+        These superstates can be used to achieve both synchronization of substates
+        and to keep them independent.
+    </p>
+
+    <p>
+        Synchronization and independence are considered two behaviors or properties of
+        the orthogonality of a superstate using what is called the AND decomposition.
+    </p>
+
+    <p>
+        This "AND decomposition" is an attempt to remove the number of states within
+        the system. Since, by modeling using finite-state automata there can be a
+        combinatorial exponential explosion of complexity within a system, using this
+        form of modeling allows you to reduce the complexity.
+    </p>
+
+    <p>
+        This property of orthogonality is being applied in libraries like Redux.
+        The use of a single store for the application can be thought of as the
+        conversion of an client-side application into a superstate. The use
+        of multiple stores can then be considered adding multiple superstates
+        to a system.
+    </p>
+
+    <p>
+        Without the modeling of the individual components as finite-state automata
+        you do not achieve the complexity reduction that you may be seeking. It is
+        simpler to reason about the events that lead to a given state, but it is not
+        convenient to reason about the <em>possible</em> states of the system.
+    </p>
+
+    <p>
+        By combining Redux with union types in Typescript to create FSA, it seems
+        possible to achieve type-checked, guaranteed, minimal complexity in a
+        client-side web application.
+    </p>
+</body>
+</html>
