@@ -1,7 +1,15 @@
 html {
-    font-family: Courier New, Courier, monospace;
+    font-family: Calibri, Helvetica, sans-serif;
+    font-size: var(--font-size);
 }
-body {
-    transform: rotate3d(0.1, 0.5, 0.1, 30deg);
-    padding-top: 79px;
+
+:root {
+    --quote-color: darkgray;
+    --font-size: 16px;
+    --large-font-size: 18px;
+}
+
+blockquote {
+    font-size: var(--large-font-size);
+    color: var(--quote-color);
 }
